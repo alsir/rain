@@ -40,7 +40,7 @@ return [
     'call_us' => ' Call us',
     'fax' => ' Fax us ',
     'email_us' => 'Email us',
-    'location'=>'Hawalli , tunis Street , Jumana Complex Basement,Office 13 , Kuwait City , Kuwait',
+    'location'=>'Hawalli , tunis Street , Jumana Complex Basement,Office 13 , Kuwait',
     'our_vision'=>'OUR VISION',
     'rain_description'=>'It is a company established in 2023 to work in the field of smart home control systems, security systems, surveillance cameras, intercom communication systems, regular and digital telephone exchanges, Internet AccessPoint systems, computer networks, central satellite and sound systems [speakers] It has a main branch within  The State of Kuwait is located in the Hawalli region.
     Rain has a qualified team that has the ability to complete the work in a short time and with high efficiency.',

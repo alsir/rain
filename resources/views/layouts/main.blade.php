@@ -245,7 +245,8 @@
                                 <h5 class="footer-widget-title">CUSTOMER SERVICE</h5>
                                 <h5>SEND AN EMAIL</h5>
                                 <h5>HOTLINE: : <a href="#">+(965) 699 08320</a></h5>
-                                <h6>8:00AM–5.30PM  MON–FRI</h6>
+								<h5>EMAIL: : <a href="#">info@rain-technology.com</a></h5>
+                                <h6>8:00AM–5.30PM  SAT–FRI</h6>
                             </div>
                         </div>
                     </div>
