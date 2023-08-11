@@ -25,4 +25,24 @@
         </p>
     </div>
 </div>
+<table class="table zero-configuration">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>رقم المنتج</th>
+            <th>الكمية </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($orderitems as $orderitem)
+            <tr>
+                <td><a href="/admin/orderitem/{{$orderitem->id}}">{{$orderitem->id}}</a></td>
+                <td><a href="/admin/product/{{$orderitem->product_id}}">{{ $orderitem->product_id }}</a></td>
+                <td>{{ $orderitem->quantity }}</td>
+            </tr>
+        @endforeach
+    </tbody>
+
+</table>
 @endsection

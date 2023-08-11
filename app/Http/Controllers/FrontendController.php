@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use Cart;
 use App\Models\Order;
-use App\Models\Orderitem;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Orderitem;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -31,6 +32,7 @@ class FrontendController extends Controller
     }
     public function check( request $request )
     {
+        $cartItems = Cart::getContent();
         $order=new Order();
         $order->total = $request->total;
         $order->note = $request->note;
@@ -39,14 +41,15 @@ class FrontendController extends Controller
         $order->address = $request->address;
         $order->coupon_id=$request->coupon_id;
         $order ->save();
-
         $order_id = $order->id;
-        foreach( $request->orderitems as $orderitem){
-            $orderitem=new Orderitem();
-            $orderitem->product_id = $request->product_id;
-            $orderitem->order_id = $order_id;
-            $orderitem->quantity = $request->quantity;
-            $orderitem ->save();
+        foreach( $cartItems as $cartItem){
+            $product_id = $cartItem->id;
+            $quantity = $cartItem->quantity;
+            $cartItem=new Orderitem();
+            $cartItem->product_id = $product_id ;
+            $cartItem->order_id = $order_id;
+            $cartItem->quantity = $quantity;
+            $cartItem ->save();
         }
     }
     public function show($id)
