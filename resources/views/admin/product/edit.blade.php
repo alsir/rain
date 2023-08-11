@@ -82,7 +82,7 @@
             <div class="col-6">
                 <div class="form-group">
                     <label for="first-name-vertical">السعر</label>
-                    <input type= "number"step="0.01" min="0" max="10" class="form-control @error('price') is-invalid @enderror"
+                    <input type= "number"step="0.01" min="0" max="10000" class="form-control @error('price') is-invalid @enderror"
                         name="price" placeholder="السعر" value="{{ old('price', $product->price) }}" required>
                 </div>
             </div>

@@ -194,7 +194,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="first-name-vertical">المجموع</label>
-                                        <input type= "number"step="0.01" min="0" max="10" class="form-control @error('total') is-invalid @enderror"
+                                        <input type= "number"step="0.01" min="0" max="10000" class="form-control @error('total') is-invalid @enderror"
                                             name="total" placeholder="المجموع" value="{{ old('total') }}" required>
                                     </div>
                                 </div>
@@ -202,9 +202,9 @@
                                     <div class="form-group">
                                         <label for="email-id-vertical">حالة الطلب</label>
                                         <select name="order_status" class="form-control" required>
-                                            <option value="1" @selected(old('order_status') == 0)>جديد</option>
-                                            <option value="0" @selected(old('order_status') == 1)>تحت المعالجة</option>
-                                            <option value="0" @selected(old('order_status') == 2)>تم التوصيل</option>
+                                            <option value="0" @selected(old('order_status') == 0)>جديد</option>
+                                            <option value="1" @selected(old('order_status') == 1)>تحت المعالجة</option>
+                                            <option value="2" @selected(old('order_status') == 2)>تم التوصيل</option>
                                         </select>
                                     </div>
                                 </div>
