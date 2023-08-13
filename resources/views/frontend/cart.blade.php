@@ -17,7 +17,34 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    @foreach ($cartItems as $cartItem)
+                        
+                    @endforeach
+                    <tr>
+                        <td>
+                            <a href="product-details-right-sidebar.html" class="product-image">
+                                <img src="{{ asset($cartItem->photo)}}" alt="product image">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="product-details-right-sidebar.html" class="product-title">{{$cartItem->name}}</a>
+                        </td>
+                        <td>{{$cartItem->price}}</td>
+                        <td>
+                            {{$cartItem->quantity}}
+                        </td>
+                        <td>
+                            <span class="total-price">{{$cartItem->price * $cartItem->quantity}}</span>
+                        </td>
+                        <td>
+                            <form action="remove/{{$cartItem->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="remove-product" type="submit"><i class="ion ion-ios-close"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
                     <tr>
                         <td>
                             <a href="product-details-right-sidebar.html" class="product-image">
