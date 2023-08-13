@@ -6,40 +6,41 @@
             <ul>
                 <li><a href="/">{{__('frontend.home')}}</a></li>
                 <li><a href="/products">{{__('frontend.shop')}}</a></li>
-                <li>Checkout</li>
+                <li>{{__("frontend.checkout")}}</li>
             </ul>
         </div>
     </div>
 </div>
 <div class="checkout-area bg-white ptb-30">
     <div class="container">
-<form action="#" class="billing-info">
+<form action="check" class="billing-info" method="post">
+    @csrf
     <div class="row">
-
+        <input type="hidden" value="{{ Cart::getTotal() }}" name="total">
         <!-- Billing Details -->
         <div class="col-lg-6">
 
-            <h3 class="small-title">BILLING DETAILS</h3>
+            <h3 class="small-title">{{__("frontend.billing")}}</h3>
             <div class="ho-form">
                 <div class="ho-form-inner">
                     <div class="single-input single-input-half">
-                        <label for="customer-firstname"> Name *</label>
+                        <label for="customer-firstname"> {{__("frontend.name")}} *</label>
                         <input type="text" name="costumer_name" id="customer-firstname">
                     </div>
 
                     <div class="single-input single-input-half">
-                        <label for="customer-phone">Phone *</label>
+                        <label for="customer-phone">{{__("frontend.phone")}} *</label>
                         <input type="text" name="costumer_number" id="customer-phone">
                     
                     
                     </div>
                     <div class="single-input">
-                        <label for="customer-address">Address*</label>
+                        <label for="customer-address">{{__("frontend.address")}}*</label>
                         <input type="text" name="address" id="customer-address"
                             placeholder="address">
                     </div>
                     <div class="single-input">
-                        <label for="customer-address">Note*</label>
+                        <label for="customer-address">{{__("frontend.note")}}*</label>
                         <input type="text" name="note" id="customer-address"
                             placeholder="note">
                     </div>
@@ -54,20 +55,22 @@
         <!-- Place Order -->
         <div class="col-lg-6">
             <div class="order-infobox">
-                <h3 class="small-title">YOUR ORDER</h3>
+                <h3 class="small-title">{{__("frontend.your_order")}}</h3>
                 <div class="checkout-table table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="text-left">PRODUCT</th>
-                                <th class="text-right">TOTAL</th>
+                                <th class="text-left">{{__("frontend.total")}}</th>
+                                <th class="text-right">{{__("frontend.product")}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-left">Aenean sagittis <span>× 1</span></td>
-                                <td class="text-right">$75.00</td>
-                            </tr>
+                            @foreach ($cartItems as $cartItem)
+                        <tr>
+                        <td class="text-left"> {{$cartItem->name}} <span>× {{$cartItem->quantity}}</span></td>
+                        <td class="text-right">{{$cartItem->quantity * $cartItem->price}}  </td>  
+                         </tr>
+                          @endforeach
                             <tr>
                                 <td class="text-left">Elementum felis <span>× 1</span></td>
                                 <td class="text-right">$125.00</td>
@@ -78,19 +81,15 @@
                             </tr>
                         </tbody>
                         <tfoot>
-                            <tr>
-                                <th class="text-left">CART SUBTOTAL</th>
-                                <td class="text-right">$715.00</td>
-                            </tr>
                             <tr class="total-price">
-                                <th class="text-left">ORDER TOTAL</th>
-                                <td class="text-right">$722.00</td>
+                                <th class="text-left">{{__("frontend.cart_totals")}}</th>
+                                <td class="text-right">{{ Cart::getTotal() }}</td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
                 <button class="ho-button ho-button-fullwidth mt-30" type="submit">
-                    <span>Proceed</span>
+                    <span>{{__("frontend.comfirm")}}</span>
                 </button>
             </div>
         </div>

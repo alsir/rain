@@ -32,6 +32,8 @@ return [
     'leave_us_a_message' => ' LEAVE US A MESSAGE',
     'name' => 'Name',
     'phone' => 'Phone',
+    'address'=>'Address',
+    'note'=>'Note',
     'send' => 'Send',
     'email' => 'Email',
     'subject' => 'Subject',
@@ -59,6 +61,10 @@ return [
     'remove'=>'REMOVE',
     'categories' => ' Categories',
     'share' => ' Share',
+    'comfirm' => ' Comfirm',
+    'billing' => ' BILLING DETAILS',
+    'checkout' => 'Check out',
+    'your_order' => 'YOUR ORDER',
 
 
 ];

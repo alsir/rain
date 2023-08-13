@@ -34,6 +34,8 @@ return [
     'name' => 'الاسم',
     'email' => 'الايميل',
     'phone' => 'الهاتف',
+    'address'=>'العنوان',
+    'note'=>'ملحوظة',
     'send' => 'ارسل',
     'subject' => 'الموضوع',
     'your_message' => 'رسالتك',
@@ -59,5 +61,9 @@ return [
     'remove'=>'ازالة',
     'categories' => ' فئات',
     'share' => ' شارك',
+    'comfirm' => ' تاكيد',
+    'billing' => ' تفاصيل الطلب',
+    'checkout' => 'تاكيد الطلب',
+    'your_order' => 'طلبك',
 
 ];

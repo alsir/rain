@@ -24,7 +24,9 @@ class FrontendController extends Controller
     }
     public function checkout()
     {
-        return view('frontend.checkout');
+        $cartItems = \Cart::getContent();
+
+        return view('frontend.checkout')->with('cartItems', $cartItems);
     }
     public function cart()
     {
