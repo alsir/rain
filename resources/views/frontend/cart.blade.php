@@ -19,7 +19,6 @@
                 <tbody>
                     @foreach ($cartItems as $cartItem)
                         
-                    @endforeach
                     <tr>
                         <td>
                             <a href="product-details-right-sidebar.html" class="product-image">
