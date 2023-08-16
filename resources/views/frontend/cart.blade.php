@@ -17,8 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($cartItems as $cartItem)
-                        
+                    @foreach ($cartItems as $cartItem):   
                     <tr>
                         <td>
                             <a href="product-details-right-sidebar.html" class="product-image">

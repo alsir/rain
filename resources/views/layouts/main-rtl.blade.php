@@ -110,7 +110,7 @@
 												<span>السلة</span>
 											</a>
 											<a href="/checkout" class="ho-button ho-button-dark ho-button-fullwidth">
-												<span>تاكيد الطلبية</span>
+												<span>تاكيد الطلب  </span>
 											</a>
 										</div>
 									</div>
@@ -140,7 +140,7 @@
                                         <ul class="hodropdown">
                                             <li><a href="/products">كل المنتجات</a></li>
                                             <li><a href="/cart">السلة </a></li>
-                                            <li><a href="/checkout">تاكيدالطلبية</a></li>
+                                            <li><a href="/checkout">تاكيد الطلبية</a></li>
                                         </ul>
                                     </li>
                                     
