@@ -182,6 +182,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
+        Davmixcool\MetaManager\MetaServiceProvider::class,
         'A6digital\Image\DefaultProfileImageServiceProvider',
         /*
          * Package Service Providers...
