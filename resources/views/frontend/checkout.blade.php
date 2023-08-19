@@ -13,7 +13,7 @@
 </div>
 <div class="checkout-area bg-white ptb-30">
     <div class="container">
-<form action="check" class="billing-info" method="post">
+<form action="/check" class="billing-info" method="post">
     @csrf
     <div class="row">
         <input type="hidden" value="{{ Cart::getTotal() }}" name="total">
@@ -68,7 +68,7 @@
                             @foreach ($cartItems as $cartItem)
                         <tr>
                         <td class="text-left"> {{$cartItem->name}} <span>× {{$cartItem->quantity}}</span></td>
-                        <td class="text-right">{{$cartItem->quantity * $cartItem->price}}  </td>  
+                        <td class="text-right">{{$cartItem->quantity * $cartItem->price}} KWD </td>  
                          </tr>
                           @endforeach
                             <tr>

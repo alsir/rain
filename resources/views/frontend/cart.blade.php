@@ -32,7 +32,7 @@
                             {{$cartItem->quantity}}
                         </td>
                         <td>
-                            <span class="total-price">{{$cartItem->price * $cartItem->quantity}}</span>
+                            <span class="total-price">{{$cartItem->price * $cartItem->quantity}} KWD</span>
                         </td>
                         <td>
                             <form action="remove/{{$cartItem->id}}" method="POST">
