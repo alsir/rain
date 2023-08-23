@@ -71,14 +71,6 @@
                         <td class="text-right">{{$cartItem->quantity * $cartItem->price}} KWD </td>  
                          </tr>
                           @endforeach
-                            <tr>
-                                <td class="text-left">Elementum felis <span>× 1</span></td>
-                                <td class="text-right">$125.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Ornare sed consequat <span>× 1</span></td>
-                                <td class="text-right">$515.00</td>
-                            </tr>
                         </tbody>
                         <tfoot>
                             <tr class="total-price">

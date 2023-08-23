@@ -113,9 +113,6 @@
 											<a href="/cart" class="ho-button ho-button-fullwidth">
 												<span>السلة</span>
 											</a>
-											<a href="/checkout" class="ho-button ho-button-dark ho-button-fullwidth">
-												<span>تاكيد الطلب  </span>
-											</a>
 										</div>
 									</div>
 									<!--// Minicart -->
@@ -144,7 +141,7 @@
                                         <ul class="hodropdown">
                                             <li><a href="/products">كل المنتجات</a></li>
                                             <li><a href="/cart">السلة </a></li>
-                                            <li><a href="/checkout">تاكيد الطلبية</a></li>
+                                            
                                         </ul>
                                     </li>
                                     

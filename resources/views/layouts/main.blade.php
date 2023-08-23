@@ -115,9 +115,6 @@
 											<a href="/cart" class="ho-button ho-button-fullwidth">
 												<span>Cart</span>
 											</a>
-											<a href="/checkout" class="ho-button ho-button-dark ho-button-fullwidth">
-												<span>Checkout</span>
-											</a>
 										</div>
 									</div>
 									<!--// Minicart -->
@@ -151,7 +148,6 @@
 											<li><a href="/products">All products</a>
 											</li>
 											<li><a href="/cart">Cart</a></li>
-											<li><a href="/checkout">Checkout</a></li>
 										</ul>
 									</li>
 									<li>
