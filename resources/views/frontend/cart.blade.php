@@ -25,7 +25,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="product-details-right-sidebar.html" class="product-title">{{$cartItem->name}}</a>
+                            <a href="/details/{{$cartItem->id}}" class="product-title">{{$cartItem->name}}</a>
                         </td>
                         <td>{{$cartItem->price}}</td>
                         <td>
