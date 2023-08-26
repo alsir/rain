@@ -143,7 +143,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form form-vertical" action="/admin/product/" method="POST" enctype="multipart/form-data">
+                    <form class="form form-vertical" action="/admin/product" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-body">
                             <div class="row">

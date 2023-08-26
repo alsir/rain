@@ -9,7 +9,7 @@
                     <label for="email-id-vertical"> المنتج</label>
                     <select name="type_id" class="form-control" required>
                         @foreach ($products as $product)
-                            <option value="{{ $product->id }}" @selected(old('product_id', $orderitem->product_id) == $product->id)>
+                            <option value="{{ $product->id }}" @selected(old('product_id', $orderitem->product_id) )>
                                 {{ $product->name }}</option>
                         @endforeach
                     </select>
@@ -20,7 +20,7 @@
                     <label for="email-id-vertical"> رقم الطلب الرئيسي</label>
                     <select name="category_id" class="form-control" required>
                         @foreach ($orders as $order)
-                            <option value="{{ $order->id }}" @selected(old('order_id' ,$orderitem->order_id) == $order->id)>
+                            <option value="{{ $order->id }}" @selected(old('order_id' ,$orderitem->order_id))>
                                 {{ $order->id }}</option>
                         @endforeach
                     </select>

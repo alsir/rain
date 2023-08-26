@@ -151,13 +151,13 @@
             <div class="category-wrapper">
                 <!-- Single Category -->
                 <div class="category">
-                    <a href="shop-rightsidebar.html" class="category-thumb">
+                    <a href="#" class="category-thumb">
                         <img src="{{ asset('frontend/rtl/images/category/category-image-1.png')}}" alt="category image">
                     </a>
                     <div class="category-content">
                         <h5 class="category-title">Cameras</h5>
                         <span class="category-productcounter">13 Product</span>
-                        <a href="shop-rightsidebar.html" class="category-productlink">Shop Now <i class="ion ion-md-arrow-dropleft"></i></a>
+                        <a href="/products" class="category-productlink">Shop Now <i class="ion ion-md-arrow-dropleft"></i></a>
                     </div>
                 </div>
                 <!--// Single Category -->

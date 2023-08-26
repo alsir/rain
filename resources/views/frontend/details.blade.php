@@ -4,7 +4,7 @@
 <div class="container">
     <div class="ho-breadcrumb">
         <ul>
-            <li><a href="index.html">{{__('frontend.home')}}</a></li>
+            <li><a href="/">{{__('frontend.home')}}</a></li>
             <li><a href="/products">{{__('frontend.shop')}}</a></li>
             @if (Session::get('locale') ==='ar')
                 <li>{{$product->name_ar}}</li>
@@ -50,7 +50,7 @@
                            <p>{{$product->description_en}}</p>
                         @endif
                         <div class="pdetails-quantity">
-                            <a href="shop-rightsidebar.html" class="ho-button">
+                            <a href="cart" class="ho-button">
                                 <i class="lnr lnr-cart"></i>
                                 <span>{{__('frontend.add_to_cart')}}</span>
                             </a>

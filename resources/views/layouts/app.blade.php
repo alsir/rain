@@ -181,8 +181,8 @@
                 </li>
                 <li class=" navigation-header"><span>ادارة رسائل العملاء</span>
                 </li>
-            </li><li class="nav-item {{ request()->is('admin/costumer') ? 'active' : '' }}"><a href="/admin/costumer/"><i class="feather icon-user"></i><span class="menu-title"
-                data-i18n="Starter kit"> العملاء</span></a>
+            {{-- </li><li class="nav-item {{ request()->is('admin/costumer') ? 'active' : '' }}"><a href="/admin/costumer/"><i class="feather icon-user"></i><span class="menu-title"
+                data-i18n="Starter kit"> العملاء</span></a> --}}
         
     </li>
 
