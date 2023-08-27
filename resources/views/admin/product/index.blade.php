@@ -166,7 +166,7 @@
                                         <label for="email-id-vertical">نوع المنتج</label>
                                         <select name="type_id" class="form-control" required>
                                             @foreach ($types as $type)
-                                                <option value="{{ $type->id }}" @selected(old('type_id') == $type->id)>
+                                                <option value="{{ $type->id }}" @selected(old('type_id') )>
                                                     {{ $type->name_ar }}</option>
                                             @endforeach
                                         </select>
@@ -177,7 +177,7 @@
                                         <label for="email-id-vertical">فئة المنتج</label>
                                         <select name="category_id" class="form-control" required>
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
+                                                <option value="{{ $category->id }}" @selected(old('category_id'))>
                                                     {{ $category->name_ar }}</option>
                                             @endforeach
                                         </select>
@@ -188,7 +188,7 @@
                                         <label for="email-id-vertical">فئة المنتج</label>
                                         <select name="manfacturer_id" class="form-control" required>
                                             @foreach ($manfacturers as $manfacturer)
-                                                <option value="{{ $manfacturer->id }}" @selected(old('manfacturer_id') == $manfacturer->id)>
+                                                <option value="{{ $manfacturer->id }}" @selected(old('manfacturer_id') )>
                                                     {{ $manfacturer->name_ar }}</option>
                                             @endforeach
                                         </select>
