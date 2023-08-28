@@ -31,20 +31,7 @@ use App\Http\Controllers\Admin\ManfacturerController;
  */
 Route::redirect('/admin', '/admin/login');
 
-Route::get('/', [FrontendController::class , 'index']);
-Route::get('/cart', [FrontendController::class , 'cart']);
-Route::get('/products', [FrontendController::class , 'product']);
-Route::get('/aboutus', [FrontendController::class , 'aboutus']);
-Route::get('/contactus', [FrontendController::class , 'contactus']);
-Route::get('/details/{$id}', [FrontendController::class , 'show']);
-Route::post('/check',[FrontendController::class , 'store']);
-Route::get('/checkout',[FrontendController::class , 'checkout']);
-Route::get('change_language/{lang}' , [LanguageController::class , 'change']);
-Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
-Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
-Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
-Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+
 
 Route::prefix('admin')->middleware(['auth','web'])->group(function () {
 
@@ -69,4 +56,18 @@ Route::prefix('admin')->middleware(['auth','web'])->group(function () {
     Route::get('/dashboard', [DashboardController::class , 'index']);
     
 });
+Route::get('/', [FrontendController::class , 'index']);
+Route::get('/cart', [FrontendController::class , 'cart']);
+Route::get('/products', [FrontendController::class , 'product']);
+Route::get('/aboutus', [FrontendController::class , 'aboutus']);
+Route::get('/contactus', [FrontendController::class , 'contactus']);
+Route::get('/details/{$id}', [FrontendController::class , 'show']);
+Route::post('/check',[FrontendController::class , 'store']);
+Route::get('/checkout',[FrontendController::class , 'checkout']);
+Route::get('change_language/{lang}' , [LanguageController::class , 'change']);
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 require __DIR__ . '/auth.php';
