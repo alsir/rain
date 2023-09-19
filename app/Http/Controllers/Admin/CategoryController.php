@@ -95,7 +95,7 @@ class CategoryController extends Controller
         if ($request->hasFile('category_photo')) {
             if ($request->file('category_photo')->isValid()) {
                 $path = $request->file('category_photo')->store('users','public_file');
-                $category->photo = 'files/'.$path;
+                $category->category_photo = 'files/'.$path;
             }
         }
         $category ->update();
