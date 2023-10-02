@@ -26,7 +26,6 @@ class StoreCategoryRequest extends FormRequest
         return [
             'name_en' => 'required|max:255|string',
             'name_ar' => 'required|max:255|string',
-            'category_photo' => 'mimes:jpeg,jpg,bmp,png',
         ];
     }
 }

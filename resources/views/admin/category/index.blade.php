@@ -108,13 +108,6 @@
                                             name="name_ar" placeholder="الاسم العربي" value="{{ old('name_ar') }}" required>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="email-id-vertical">الصورة</label>
-                                        <input type="file" class="form-control @error('category_photo') is-invalid @enderror"
-                                            name="category_photo">
-                                    </div>
-                                </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary mr-1 mb-1">إضافة</button>
                                 </div>

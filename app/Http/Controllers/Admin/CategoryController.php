@@ -45,12 +45,6 @@ class CategoryController extends Controller
         $category=new category();
         $category->name_ar = $request->name_ar;
         $category->name_en = $request->name_en;
-        if ($request->hasFile('category_photo')) {
-            if ($request->file('category_photo')->isValid()) {
-                $path = $request->file('category_photo')->store('users','public_file');
-                $category->category_photo = 'files/'.$path;
-            }
-        }
         $category ->save();
         toastr()->success('تم حفظ بيانات الفئة بنجاح !!');
         return back();
@@ -92,12 +86,6 @@ class CategoryController extends Controller
         $category=category::find($id);
         $category->name_ar = $request->name_ar;
         $category->name_en = $request->name_en;
-        if ($request->hasFile('category_photo')) {
-            if ($request->file('category_photo')->isValid()) {
-                $path = $request->file('category_photo')->store('users','public_file');
-                $category->category_photo = 'files/'.$path;
-            }
-        }
         $category ->update();
         toastr()->success('تم حفظ بيانات الفئة بنجاح !!');
         return back(); 

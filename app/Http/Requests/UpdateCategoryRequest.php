@@ -26,7 +26,6 @@ class UpdateCategoryRequest extends FormRequest
         return [
             'name_ar' => 'required|max:255|string',
             'name_en' => 'required|max:255|string',
-            'category_photo' => 'mimes:jpeg,jpg,bmp,png',
         ];
     }
 }
