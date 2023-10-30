@@ -24,12 +24,12 @@ class StoreAdRequest extends FormRequest
     public function rules()
     {
         return [
-            'ad_1_350' => 'mimes:jpg,bmp,png|max:2048',
-            'ad_2_350' => 'mimes:jpg,bmp,png|max:2048',
-            'ad_3_350' => 'mimes:jpg,bmp,png|max:2048',
-            'ad_1_555' => 'mimes:jpg,bmp,png|max:2048',
-            'ad_2_555' => 'mimes:jpg,bmp,png|max:2048',
-            'ad_1_1110' => 'mimes:jpg,bmp,png|max:2048',
+            'ad_1_350' => 'mimes:jpg,bmp,png',
+            'ad_2_350' => 'mimes:jpg,bmp,png',
+            'ad_3_350' => 'mimes:jpg,bmp,png',
+            'ad_1_555' => 'mimes:jpg,bmp,png',
+            'ad_2_555' => 'mimes:jpg,bmp,png',
+            'ad_1_1110' => 'mimes:jpg,bmp,png',
         ];
     }
 }

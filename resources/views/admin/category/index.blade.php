@@ -34,7 +34,6 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th></th>
                                         <th>الاسم العربي</th>
                                         <th>الاسم الانجليزي</th>
                                         <th></th>
@@ -45,12 +44,7 @@
                                     @foreach ($categories as $category)
                                         <tr>
                                             <td>{{ $category->id }}</td>
-                                            <td>
-                                                <div class="avatar mr-1 avatar-xl">
-                                                    <img src="{{ asset($category->category_photo) }}" alt="avtar img holder"
-                                                        style="object-fit: cover">
-                                                </div>
-                                            </td>
+                                            
                                             <td>{{ $category->name_ar }}</td>
                                             <td>{{ $category->name_en }}</td>
                                                <td> <button class="btn btn-success" name="edit_button"
