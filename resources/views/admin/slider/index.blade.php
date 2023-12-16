@@ -61,7 +61,7 @@
                                             </td>
                                             <td>
                                                 <div class="avatar mr-1 avatar-xl">
-                                                    <img src="{{ asset($ad->ad_2_825) }}" alt="avtar img holder"
+                                                    <img src="{{ asset($slider->ad_2_825) }}" alt="avtar img holder"
                                                         style="object-fit: cover">
                                                 </div>
                                             </td>
@@ -72,7 +72,7 @@
                                             </td>
                                             <td>
                                                 <div class="avatar mr-1 avatar-xl">
-                                                    <img src="{{ asset($ad->ad_3_825) }}" alt="avtar img holder"
+                                                    <img src="{{ asset($slider->ad_3_825) }}" alt="avtar img holder"
                                                         style="object-fit: cover">
                                                 </div>
                                             </td>

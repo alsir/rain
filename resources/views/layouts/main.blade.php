@@ -6,11 +6,11 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Rain Technology</title>
 	<meta name="description" content="">
-	@include('meta::manager', [
+	{{-- @include('meta::manager', [
     'title'         => 'Rain Technology',
     'description'   => 'We are a company for the retail sale of electrical and electronic devices',
     'image'         => '{{ asset('/app-assets/images/ico/apple-icon-120.png') }}',
-])
+]) --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Favicon -->

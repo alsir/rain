@@ -69,7 +69,9 @@ class FrontendController extends Controller
     public function product()
     {
         $products = Product::all();
-        return view('frontend.products')->with('products' , $products);
+        $products_count = $products->count();
+        return view('frontend.products')->with('products' , $products)
+        ->with('products_count' , $products_count);
     }
     public function aboutus()
     {

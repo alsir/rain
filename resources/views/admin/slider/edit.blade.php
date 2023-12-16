@@ -1,4 +1,4 @@
-<form class="form form-vertical" action="/admin/category/{{ $slider->id }}" method="POST" enctype="multipart/form-data">
+<form class="form form-vertical" action="/admin/slider/{{ $slider->id }}" method="POST" enctype="multipart/form-data">
     @method('PATCH')
     @csrf
     <input type="hidden" value="{{ $slider->id }}" name="id">

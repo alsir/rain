@@ -18,7 +18,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="about-image">
-                        <img src="{{ asset('frontend/rtl/images/others/about-image.jpg')}}" alt="beautiful girl">
+                        <img src="{{ asset('frontend/rtl/images/others/1.jpeg')}}" alt="beautiful girl">
                     </div>
                 </div>
                 <div class="col-lg-5">

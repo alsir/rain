@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title> رين تكنولجي</title>
-    @include('meta::manager', [
+    {{-- @include('meta::manager', [
     'title'         => 'رين تكنولجي',
     'description'   => 'المنزل Smart home و الأنظمة الأمنية كاميرات المراقبة، وأنظمة التواصل الانتركم وبدالة التلفون العادية و الديجيتال، و انظمة  الانترنت AccessPoint، و شبكات الكمبيوتر، و الستلايت المركزي  وأنظمة الصوت [السماعات] لديها فرع رئيسي داخل دولة الكويت ويقع في منطقة حولي',
-    'image'         => '{{ asset('/app-assets/images/logo/Rain-tech.ico') }}',
-])
+    'image'         => '',
+]) --}}
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->

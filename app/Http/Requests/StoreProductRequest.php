@@ -33,7 +33,7 @@ class StoreProductRequest extends FormRequest
             'type_id' => 'required|numeric',
             'category_id' => 'required|numeric',
             'is_available' => 'required|numeric',
-            'photo' => 'mimes:jpg,bmp,png|max:2048',
+            'photo' => 'mimes:jpg,bmp,png,jpeg',
             'price' => 'required|numeric',
             'discount' => 'required|numeric',
         ];

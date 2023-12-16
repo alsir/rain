@@ -38,12 +38,42 @@ class AdController extends Controller
     public function store(StoreAdRequest $request)
     {
         $ad = new ad();
-        $ad->ad_1_555 = $request->ad_1_555;
-        $ad->ad_2_555 = $request->ad_2_555;
-        $ad->ad_1_350 = $request->ad_1_350;
-        $ad->ad_2_350 = $request->ad_2_350;
-        $ad->ad_3_350 = $request->ad_3_350;
-        $ad->ad_1_1110 = $request->ad_1_1110;
+        if ($request->hasFile('ad_1_555')) {
+            if ($request->file('ad_1_555')->isValid()) {
+                $path = $request->file('ad_1_555')->store('users','public_file');
+                $ad->ad_1_555 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_2_555')) {
+            if ($request->file('ad_2_555')->isValid()) {
+                $path = $request->file('ad_2_555')->store('users','public_file');
+                $ad->ad_2_555 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_1_350')) {
+            if ($request->file('ad_1_350')->isValid()) {
+                $path = $request->file('ad_1_350')->store('users','public_file');
+                $ad->ad_1_350 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_2_350')) {
+            if ($request->file('ad_2_350')->isValid()) {
+                $path = $request->file('ad_2_350')->store('users','public_file');
+                $ad->ad_2_350 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_3_350')) {
+            if ($request->file('ad_3_350')->isValid()) {
+                $path = $request->file('ad_3_350')->store('users','public_file');
+                $ad->ad_3_350 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_1_1110')) {
+            if ($request->file('ad_1_1110')->isValid()) {
+                $path = $request->file('ad_1_1110')->store('users','public_file');
+                $ad->ad_1_1110 = 'files/'.$path;
+            }
+        }
         $ad ->save();
         toastr()->success('تم حفظ بيانات العميل بنجاح !!');
         return back();
@@ -82,12 +112,42 @@ class AdController extends Controller
     public function update(UpdateAdRequest $request, $id)
     {
         $ad=ad::find($id);
-        $ad->ad_1_555 = $request->ad_1_555;
-        $ad->ad_2_555 = $request->ad_2_555;
-        $ad->ad_1_350 = $request->ad_1_350;
-        $ad->ad_2_350 = $request->ad_2_350;
-        $ad->ad_3_350 = $request->ad_3_350;
-        $ad->ad_1_1110 = $request->ad_1_1110;
+        if ($request->hasFile('ad_1_555')) {
+            if ($request->file('ad_1_555')->isValid()) {
+                $path = $request->file('ad_1_555')->store('users','public_file');
+                $ad->ad_1_555 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_2_555')) {
+            if ($request->file('ad_2_555')->isValid()) {
+                $path = $request->file('ad_2_555')->store('users','public_file');
+                $ad->ad_2_555 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_1_350')) {
+            if ($request->file('ad_1_350')->isValid()) {
+                $path = $request->file('ad_1_350')->store('users','public_file');
+                $ad->ad_1_350 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_2_350')) {
+            if ($request->file('ad_2_350')->isValid()) {
+                $path = $request->file('ad_2_350')->store('users','public_file');
+                $ad->ad_2_350 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_3_350')) {
+            if ($request->file('ad_3_350')->isValid()) {
+                $path = $request->file('ad_3_350')->store('users','public_file');
+                $ad->ad_3_350 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_1_1110')) {
+            if ($request->file('ad_1_1110')->isValid()) {
+                $path = $request->file('ad_1_1110')->store('users','public_file');
+                $ad->ad_1_1110 = 'files/'.$path;
+            }
+        }
         $ad ->save();
         toastr()->success('تم حفظ بيانات العميل بنجاح !!');
         return back();

@@ -38,18 +38,33 @@ class SliderController extends Controller
     public function store(StoreSliderRequest $request)
     {
         $slider = new slider();
-        $slider->ad_1_825 = $request->ad_1_825;
         $slider->heading_1 = $request->heading_1;
         $slider->sub_heading_1 = $request->sub_heading_1;
         $slider->description_1 = $request->description_1;
-        $slider->ad_2_825 = $request->ad_2_825;
         $slider->heading_2 = $request->heading_2;
         $slider->sub_heading_2 = $request->sub_heading_2;
         $slider->description_2 = $request->description_2;
-        $slider->ad_3_825 = $request->ad_3_825;
         $slider->heading_3 = $request->heading_3;
         $slider->sub_heading_3 = $request->sub_heading_3;
         $slider->description_3 = $request->description_3;
+        if ($request->hasFile('ad_1_825')) {
+            if ($request->file('ad_1_825')->isValid()) {
+                $path = $request->file('ad_1_825')->store('users','public_file');
+                $slider->ad_1_825 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_2_825')) {
+            if ($request->file('ad_2_825')->isValid()) {
+                $path = $request->file('ad_2_825')->store('users','public_file');
+                $slider->ad_2_825 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_3_825')) {
+            if ($request->file('ad_3_825')->isValid()) {
+                $path = $request->file('ad_3_825')->store('users','public_file');
+                $slider->ad_3_825 = 'files/'.$path;
+            }
+        }
         $slider ->save();
         toastr()->success('تم حفظ بيانات العميل بنجاح !!');
         return back();
@@ -88,12 +103,33 @@ class SliderController extends Controller
     public function update(UpdateSliderRequest $request,  $id)
     {
         $slider=slider::find($id);
-        $slider->slider_1_555 = $request->slider_1_555;
-        $slider->slider_2_555 = $request->slider_2_555;
-        $slider->slider_1_350 = $request->slider_1_350;
-        $slider->slider_2_350 = $request->slider_2_350;
-        $slider->slider_3_350 = $request->slider_3_350;
-        $slider->slider_1_1110 = $request->slider_1_1110;
+        $slider->heading_1 = $request->heading_1;
+        $slider->sub_heading_1 = $request->sub_heading_1;
+        $slider->description_1 = $request->description_1;
+        $slider->heading_2 = $request->heading_2;
+        $slider->sub_heading_2 = $request->sub_heading_2;
+        $slider->description_2 = $request->description_2;
+        $slider->heading_3 = $request->heading_3;
+        $slider->sub_heading_3 = $request->sub_heading_3;
+        $slider->description_3 = $request->description_3;
+        if ($request->hasFile('ad_1_825')) {
+            if ($request->file('ad_1_825')->isValid()) {
+                $path = $request->file('ad_1_825')->store('users','public_file');
+                $slider->ad_1_825 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_2_825')) {
+            if ($request->file('ad_2_825')->isValid()) {
+                $path = $request->file('ad_2_825')->store('users','public_file');
+                $slider->ad_2_825 = 'files/'.$path;
+            }
+        }
+        if ($request->hasFile('ad_3_825')) {
+            if ($request->file('ad_3_825')->isValid()) {
+                $path = $request->file('ad_3_825')->store('users','public_file');
+                $slider->ad_3_825 = 'files/'.$path;
+            }
+        }
         $slider ->save();
         toastr()->success('تم حفظ بيانات العميل بنجاح !!');
         return back();

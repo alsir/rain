@@ -231,6 +231,13 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
+                                        <label for="first-name-vertical">التخفيض</label>
+                                        <input type= "number"step="0.01" min="0" max="1000" class="form-control @error('discount') is-invalid @enderror"
+                                            name="discount" placeholder="التخفيض" value="{{ old('discount') }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
                                         <label for="email-id-vertical">حاله المنتج</label>
                                         <select name="is_available" class="form-control" required>
                                             <option value="1" @selected(old('is_available') == 1)>متوفر</option>
