@@ -12,14 +12,10 @@
                     </button>
                     <nav class="catmenu-body">
                         <ul>
-                            <li class="catmenu-dropdown"><a href="#"><i class="ion ion-ios-power"></i>Fashion</a>
-                            </li>
-                            <li class="catmenu-dropdown"><a href="#"><i class="ion ion-md-headset"></i>Electronics</a>
-                            </li>
-                            <li class="catmenu-dropdown"><a href="#"><i class="ion ion-ios-infinite"></i>Toys &
-                                    Hobbies</a>
-                            </li>
-                            <li><a href="#"><i class="ion ion-logo-game-controller-b"></i>Sports & Outdoors</a></li>
+                            @foreach ($categories as $category)
+                            
+                            <li><a href="#"><i class="ion ion-logo-game-controller-b"></i>{{$category->name_en}}</a></li>
+                            @endforeach
                             <li><a href="#"><i class="ion ion-ios-tablet-landscape"></i>Smartphone & Tablets</a></li>
                             <li><a href="#"><i class="ion ion-ios-volume-high"></i>Health & Beauty</a></li>
                             <li><a href="#"><i class="ion ion-ios-desktop"></i>Computers & Networking</a></li>
@@ -37,27 +33,26 @@
                 </div>
                 <!--// Category Menu -->
             </div>
-
+            @foreach ($sildering as  $slider)
             <div class="col-lg-9">
                 <!-- Hero Area -->
                 <div class="herobanner herobanner-3 slider-navigation slider-dots mt-30">
 
                     <!-- Herobanner Single -->
                     <div class="herobanner-single">
-                        <img src="{{ asset('frontend/rtl/images/hero/hero-image-5.jpg')}}" alt="hero image">
+                        <img src="{{ asset($slider->ad_1_825)}}" alt="hero image">
                         <div class="herobanner-content">
                             <div class="herobanner-box">
-                                <h4>WE ARE THE BEST</h4>
+                                <h4>{{$slider->sub_heading_1}}</h4>
                             </div>
                             <div class="herobanner-box">
-                                <h1>Headphones On <span>World Off</span></h1>
+                                <h1>{{$slider->heading_1}}</h1>
                             </div>
                             <div class="herobanner-box">
-                                <p>Bose Qc25 black quiet comfort25 acoustic noise cancelling Headphones. Lorem
-                                    ipsum dollor.</p>
+                                <p>{{$slider->description_1}}/p>
                             </div>
                             <div class="herobanner-box">
-                                <a href="shop-rightsidebar.html" class="ho-button ho-button-white">
+                                <a href="/" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
                                     <span>Shop Now</span>
                                 </a>
@@ -69,20 +64,19 @@
 
                     <!-- Herobanner Single -->
                     <div class="herobanner-single">
-                        <img src="{{ asset('frontend/rtl/images/hero/hero-image-6.jpg')}}" alt="hero image">
+                        <img src="{{ asset($slider->ad_2_825)}}" alt="hero image">
                         <div class="herobanner-content">
                             <div class="herobanner-box">
-                                <h4>ONE - DAY SEMINAR</h4>
+                                <h4>{{$slider->sub_heading_2}}</h4>
                             </div>
                             <div class="herobanner-box">
-                                <h1>Work with <span>I Phone XX</span></h1>
+                                <h1>{{$slider->heading_2}}</h1>
                             </div>
                             <div class="herobanner-box">
-                                <p>Learn how to write and produce cinematic Virtual Reality content by revered
-                                    industry leaders.</p>
+                                <p>{{$slider->description_2}}/p>
                             </div>
                             <div class="herobanner-box">
-                                <a href="shop-rightsidebar.html" class="ho-button ho-button-white">
+                                <a href="/" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
                                     <span>Shop Now</span>
                                 </a>
@@ -91,8 +85,29 @@
                         <span class="herobanner-progress"></span>
                     </div>
                     <!--// Herobanner Single -->
-
+                    <div class="herobanner-single">
+                        <img src="{{ asset($slider->ad_3_825)}}" alt="hero image">
+                        <div class="herobanner-content">
+                            <div class="herobanner-box">
+                                <h4>{{$slider->sub_heading_3}}</h4>
+                            </div>
+                            <div class="herobanner-box">
+                                <h1>{{$slider->heading_3}}</h1>
+                            </div>
+                            <div class="herobanner-box">
+                                <p>{{$slider->description_3}}/p>
+                            </div>
+                            <div class="herobanner-box">
+                                <a href="/" class="ho-button ho-button-white">
+                                    <i class="lnr lnr-cart"></i>
+                                    <span>Shop Now</span>
+                                </a>
+                            </div>
+                        </div>
+                        <span class="herobanner-progress"></span>
+                    </div>
                 </div>
+                @endforeach
                 <!--// Hero Area -->
             </div>
 
