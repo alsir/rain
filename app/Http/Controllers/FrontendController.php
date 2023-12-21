@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ad;
 use Cart;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Orderitem;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -16,9 +18,13 @@ class FrontendController extends Controller
         $new_arrival_products  = Product::orderBy('id','DESC')->limit(7);
         $best_products  = Product::orderBy('discount','DESC')->limit(7);
         $categories= Category::all();
+        $sildering= Slider::all();
+        $ading= Ad::all();
         $products = Product::all();
         return view('frontend.index')->with('new_arrival_products' , $new_arrival_products)
         ->with('best_products' , $best_products)
+        ->with('sildering' , $sildering)
+        ->with('sildering' , $sildering)
         ->with('categories' , $categories)
         ->with('products' , $products);
     }
