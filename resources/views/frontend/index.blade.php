@@ -8,7 +8,7 @@
                 <!-- Category Menu -->
                 <div class="catmenu catmenu-2 mt-30">
                     <button class="catmenu-trigger is-active">
-                        <span>Categories</span>
+                        <span>{{__('frontend.categories')}}</span>
                     </button>
                     <nav class="catmenu-body">
                         <ul>
@@ -42,7 +42,7 @@
                             <div class="herobanner-box">
                                 <a href="/" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
-                                    <span>Shop Now</span>
+                                    <span>{{__('frontend.shop_now')}}/span>
                                 </a>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                             <div class="herobanner-box">
                                 <a href="/" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
-                                    <span>Shop Now</span>
+                                    <span>{{__('frontend.shop_now')}}</span>
                                 </a>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                             <div class="herobanner-box">
                                 <a href="/" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
-                                    <span>Shop Now</span>
+                                    <span>{{__('frontend.shop_now')}}</span>
                                 </a>
                             </div>
                         </div>
