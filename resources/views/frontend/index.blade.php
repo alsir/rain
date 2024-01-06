@@ -16,18 +16,6 @@
                             
                             <li><a href="#"><i class="ion ion-logo-game-controller-b"></i>{{$category->name_en}}</a></li>
                             @endforeach
-                            <li><a href="#"><i class="ion ion-ios-tablet-landscape"></i>Smartphone & Tablets</a></li>
-                            <li><a href="#"><i class="ion ion-ios-volume-high"></i>Health & Beauty</a></li>
-                            <li><a href="#"><i class="ion ion-ios-desktop"></i>Computers & Networking</a></li>
-                            <li><a href="#"><i class="ion ion-md-watch"></i>Accessories</a></li>
-                            <li><a href="#"><i class="ion ion-ios-camera"></i>Jewelry & Watches</a></li>
-                            <li class="catmenu-hidden"><a href="#"><i class="ion ion-ios-desktop"></i>Automative</a></li>
-                            <li class="catmenu-hidden"><a href="#"><i class="ion ion-md-watch"></i>Flashlights
-                                    & Lamps</a></li>
-                            <li class="catmenu-hidden"><a href="#"><i class="ion ion-ios-camera"></i>Cameras &
-                                    Photo</a></li>
-                            <li class="catmenu-moretrigger"><a href="#"><i class="ion ion-ios-more"></i>More
-                                    Categories</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -110,11 +98,12 @@
                 @endforeach
                 <!--// Hero Area -->
             </div>
+            @foreach ($ading as  $ad)
 
             <div class="col-md-4">
                 <div class="imgbanner mt-30">
                     <a href="product-details.html">
-                        <img src="{{ asset('frontend/ltr/images/banner/banner-image-16.jpg')}}" alt="banner">
+                        <img src="{{ asset($ad->ad_1_350)}}" alt="banner">
                     </a>
                 </div>
             </div>
@@ -122,7 +111,7 @@
             <div class="col-md-4">
                 <div class="imgbanner mt-30">
                     <a href="product-details.html">
-                        <img src="{{ asset('frontend/ltr/images/banner/banner-image-4.jpg')}}" alt="banner">
+                        <img src="{{ asset($ad->ad_2_350)}}" alt="banner">
                     </a>
                 </div>
             </div>
@@ -130,10 +119,11 @@
             <div class="col-md-4">
                 <div class="imgbanner mt-30">
                     <a href="product-details.html">
-                        <img src="{{ asset('frontend/ltr/images/banner/banner-image-17.jpg')}}" alt="banner">
+                        <img src="{{ asset($ad->ad_3_350)}}" alt="banner">
                     </a>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -223,12 +213,13 @@
 <!-- Banner Area -->
 <div class="banner-area">
     <div class="container">
+        @foreach ($ading as  $ad)
         <div class="row">
 
             <div class="col-md-6">
                 <div class="imgbanner imgbanner-2 mt-30">
                     <a href="product-details.html">
-                        <img src="{{ asset('frontend/ltr/images/banner/banner-image-18.jpg')}}" alt="banner">
+                        <img src="{{ asset($ad->ad_1_555)}}" alt="banner">
                     </a>
                 </div>
             </div>
@@ -236,12 +227,13 @@
             <div class="col-md-6">
                 <div class="imgbanner imgbanner-2 mt-30">
                     <a href="product-details.html">
-                        <img src="{{ asset('frontend/ltr/images/banner/banner-image-19.jpg')}}" alt="banner">
+                        <img src="{{ asset($ad->ad_2_555)}}" alt="banner">
                     </a>
                 </div>
             </div>
 
         </div>
+        @endforeach
     </div>
 </div>
 <!--// Banner Area -->
@@ -377,15 +369,17 @@
 <!--// Our Products Area -->
 
 <!-- Banner Area -->
+@foreach ($ading as  $ad)
 <div class="banner-area">
     <div class="container">
         <div class="imgbanner imgbanner-2 mt-30">
             <a href="product-details.html">
-                <img src="{{ asset('frontend/ltr/images/banner/banner-image-6.jpg')}}" alt="banner">
+                <img src="{{ asset($ad->ad_1_110)}}" alt="banner">
             </a>
         </div>
     </div>
 </div>
+@endforeach
 <!--// Banner Area -->
 
 <!-- Newarrival, Best seller & Features Product -->

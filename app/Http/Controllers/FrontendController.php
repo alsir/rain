@@ -24,7 +24,7 @@ class FrontendController extends Controller
         return view('frontend.index')->with('new_arrival_products' , $new_arrival_products)
         ->with('best_products' , $best_products)
         ->with('sildering' , $sildering)
-        ->with('sildering' , $sildering)
+        ->with('ading' , $ading)
         ->with('categories' , $categories)
         ->with('products' , $products);
     }
