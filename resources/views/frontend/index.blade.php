@@ -13,8 +13,11 @@
                     <nav class="catmenu-body">
                         <ul>
                             @foreach ($categories as $category)
-                            
-                            <li><a href="#"><i class="ion ion-logo-game-controller-b"></i>{{$category->name_en}}</a></li>
+                            @if (Session::get('locale')==='en')
+                            <li><a href="/products"><i class="ion ion-logo-game-controller-b"></i>{{$category->name_en}}</a></li>
+                            @else
+                            <li><a href="/products"><i class="ion ion-logo-game-controller-b"></i>{{$category->name_ar}}</a></li>
+                            @endif
                             @endforeach
                         </ul>
                     </nav>
@@ -40,9 +43,9 @@
                                 <p>{{$slider->description_1}}/p>
                             </div>
                             <div class="herobanner-box">
-                                <a href="/" class="ho-button ho-button-white">
+                                <a href="/products" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
-                                    <span>{{__('frontend.shop_now')}}/span>
+                                    <span>{{__('frontend.shop_now')}}</span>
                                 </a>
                             </div>
                         </div>
@@ -61,10 +64,10 @@
                                 <h1>{{$slider->heading_2}}</h1>
                             </div>
                             <div class="herobanner-box">
-                                <p>{{$slider->description_2}}/p>
+                                <p>{{$slider->description_2}}</p>
                             </div>
                             <div class="herobanner-box">
-                                <a href="/" class="ho-button ho-button-white">
+                                <a href="/products" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
                                     <span>{{__('frontend.shop_now')}}</span>
                                 </a>
@@ -83,10 +86,10 @@
                                 <h1>{{$slider->heading_3}}</h1>
                             </div>
                             <div class="herobanner-box">
-                                <p>{{$slider->description_3}}/p>
+                                <p>{{$slider->description_3}}</p>
                             </div>
                             <div class="herobanner-box">
-                                <a href="/" class="ho-button ho-button-white">
+                                <a href="/products" class="ho-button ho-button-white">
                                     <i class="lnr lnr-cart"></i>
                                     <span>{{__('frontend.shop_now')}}</span>
                                 </a>
@@ -102,7 +105,7 @@
 
             <div class="col-md-4">
                 <div class="imgbanner mt-30">
-                    <a href="product-details.html">
+                    <a href="/products">
                         <img src="{{ asset($ad->ad_1_350)}}" alt="banner">
                     </a>
                 </div>
@@ -110,7 +113,7 @@
 
             <div class="col-md-4">
                 <div class="imgbanner mt-30">
-                    <a href="product-details.html">
+                    <a href="/products">
                         <img src="{{ asset($ad->ad_2_350)}}" alt="banner">
                     </a>
                 </div>
@@ -118,7 +121,7 @@
 
             <div class="col-md-4">
                 <div class="imgbanner mt-30">
-                    <a href="product-details.html">
+                    <a href="/products">
                         <img src="{{ asset($ad->ad_3_350)}}" alt="banner">
                     </a>
                 </div>
@@ -140,13 +143,17 @@
             <div class="category-wrapper">
                 <!-- Single Category -->
                 <div class="category">
-                    <a href="shop-rightsidebar.html" class="category-thumb">
+                    <a href="/products" class="category-thumb">
                         {{-- <img src="{{ asset($category->photo)}}" alt="category image"> --}}
                     </a>
                     <div class="category-content">
+                        @if (Session::get('locale')==='ar')
                         <h5 class="category-title">{{$category->name_ar}}</h5>
+                        @else
+                        <h5 class="category-title">{{$category->name_en}}</h5>
+                        @endif
                         <span class="category-productcounter">{{$products->where('category_id', $category->id)->count()}}{{__('frontend.products')}}</span>
-                        <a href="shop-rightsidebar.html" class="category-productlink">{{__('frontend.shop_now')}} <i class="ion ion-md-arrow-dropleft"></i></a>
+                        <a href="/products" class="category-productlink">{{__('frontend.shop_now')}} <i class="ion ion-md-arrow-dropleft"></i></a>
                     </div>
                 </div>
                 <!--// Single Category -->
@@ -168,15 +175,15 @@
                 <article class="hoproduct">
                     
                     <div class="hoproduct-image">
-                        <a class="hoproduct-thumb" href="product-details.html">
+                        <a class="hoproduct-thumb" href="/details/{{$product->id}}">
                             <img class="hoproduct-frontimage" src="{{ asset($product->photo)}}"
                                 alt="product image">
                             <img class="hoproduct-backimage" src="{{ asset($product->photo)}}"
                                 alt="product image">
                         </a>
                         <ul class="hoproduct-actionbox">
-                            <li><a href="#"><i class="lnr lnr-cart"></i></a></li>
-                            <li><a href="#" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
+                            <li><a href="/cart"><i class="lnr lnr-cart"></i></a></li>
+                            <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                         </ul>
                         <ul class="hoproduct-flags">
                             <li class="flag-pack">{{__('frontend.new')}}</li>
@@ -185,9 +192,9 @@
                     </div>
                     <div class="hoproduct-content">
                         @if (Session::get('locale')==='ar')
-                        <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_ar}}</a></h5>
+                        <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_ar}}</a></h5>
                         @else
-                        <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_en}}</a></h5>
+                        <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_en}}</a></h5>
                         @endif
                         
                         <div class="hoproduct-pricebox">
@@ -218,7 +225,7 @@
 
             <div class="col-md-6">
                 <div class="imgbanner imgbanner-2 mt-30">
-                    <a href="product-details.html">
+                    <a href="/products">
                         <img src="{{ asset($ad->ad_1_555)}}" alt="banner">
                     </a>
                 </div>
@@ -226,7 +233,7 @@
 
             <div class="col-md-6">
                 <div class="imgbanner imgbanner-2 mt-30">
-                    <a href="product-details.html">
+                    <a href="/products">
                         <img src="{{ asset($ad->ad_2_555)}}" alt="banner">
                     </a>
                 </div>
@@ -249,20 +256,24 @@
             <div class="tab-pane fade show active" id="bstab1-area1" role="tabpanel" aria-labelledby="bstab1-area1-tab">
                 <div class="product-slider trending-products-slider-2 slider-navigation-2">
                     <div class="product-slider-col">
-                        @foreach ($products as $product)
+                        
                         <!-- Single Product -->
+                        @foreach ($products as $product)
                         <article class="hoproduct hoproduct-3">
                             
                             <div class="hoproduct-image">
-                                <a class="hoproduct-thumb" href="product-details.html">
+                                <a class="hoproduct-thumb" href="/details/{{$product->id}}">
                                     <img class="hoproduct-frontimage" src="{{ asset($product->photo)}}"
                                         alt="product image">
                                     <img class="hoproduct-backimage" src="{{ asset($product->photo)}}"
                                         alt="product image">
                                 </a>
                                 <ul class="hoproduct-actionbox">
-                                    <li><a href="#"><i class="lnr lnr-cart"></i></a></li>
-                                    <li><a href="#" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
+                                    <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                    <li><a href="/cart" type="submit"><i class="lnr lnr-cart"></i></a></li>
+                                    </form>
+                                    <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                                 </ul>
                                 <ul class="hoproduct-flags">
                                     <li class="flag-pack">{{__('frontend.new')}}</li>
@@ -271,9 +282,9 @@
                             </div>
                             <div class="hoproduct-content">
                                 @if (Session::get('locale')==='ar')
-                                <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_ar}}</a></h5>
+                                <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_ar}}</a></h5>
                                 @else
-                                <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_en}}</a></h5>
+                                <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_en}}</a></h5>
                                 @endif
                                 
                                 <div class="hoproduct-pricebox">
@@ -287,14 +298,16 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </article>
-                            @endforeach
+                        @endforeach
+                            
                         <!--// Single Product -->
                     </div>
 
                 </div>
             </div>
-            <div class="tab-pane fade" id="bstab1-area2" role="tabpanel" aria-labelledby="bstab1-area2-tab">
+            {{-- <div class="tab-pane fade" id="bstab1-area2" role="tabpanel" aria-labelledby="bstab1-area2-tab">
                 <div class="product-slider trending-products-slider-2 slider-navigation-2">
 
             </div>
@@ -303,7 +316,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!--// Trending Products Area -->
@@ -320,20 +333,21 @@
                 <div class="product-slider our-products-slider-3 slider-navigation-2">
 
                     <div class="product-slider-col">
-                        @foreach ($products as $product)
+                        
                         <!-- Single Product -->
-                        <article class="hoproduct">
+                        @foreach ($products as $product)
+                        <article class="hoproduct flex-row">
                             
                             <div class="hoproduct-image">
-                                <a class="hoproduct-thumb" href="product-details.html">
+                                <a class="hoproduct-thumb" href="/details/{{$product->id}}">
                                     <img class="hoproduct-frontimage" src="{{ asset($product->photo)}}"
                                         alt="product image">
                                     <img class="hoproduct-backimage" src="{{ asset($product->photo)}}"
                                         alt="product image">
                                 </a>
                                 <ul class="hoproduct-actionbox">
-                                    <li><a href="#"><i class="lnr lnr-cart"></i></a></li>
-                                    <li><a href="#" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
+                                    <li><a href="/cart"><i class="lnr lnr-cart"></i></a></li>
+                                    <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                                 </ul>
                                 <ul class="hoproduct-flags">
                                     <li class="flag-pack">{{__('frontend.new')}}</li>
@@ -342,9 +356,9 @@
                             </div>
                             <div class="hoproduct-content">
                                 @if (Session::get('locale')==='ar')
-                                <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_ar}}</a></h5>
+                                <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_ar}}</a></h5>
                                 @else
-                                <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_en}}</a></h5>
+                                <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_en}}</a></h5>
                                 @endif
                                 
                                 <div class="hoproduct-pricebox">
@@ -360,6 +374,7 @@
                             </div>
                         </article>
                         @endforeach
+                        
 
                 </div>
             </div>
@@ -373,7 +388,7 @@
 <div class="banner-area">
     <div class="container">
         <div class="imgbanner imgbanner-2 mt-30">
-            <a href="product-details.html">
+            <a href="/products">
                 <img src="{{ asset($ad->ad_1_110)}}" alt="banner">
             </a>
         </div>
@@ -397,22 +412,23 @@
         <div class="tab-content" id="bstab3-ontent">
             <div class="tab-pane fade show active" id="bstab3-area1" role="tabpanel" aria-labelledby="bstab3-area1-tab">
             <div class="product-slider new-best-featured-slider slider-navigation-2">
-                @foreach ($new_arrival_products as $product)
+                
                 <div class="product-slider-col">
                     
                     <!-- Single Product -->
+                    @foreach ($new_arrival_products as $product)
                     <article class="hoproduct">
                         
                         <div class="hoproduct-image">
-                            <a class="hoproduct-thumb" href="product-details.html">
+                            <a class="hoproduct-thumb" href="/details/{{$product->id}}">
                                 <img class="hoproduct-frontimage" src="{{ asset($product->photo)}}"
                                     alt="product image">
                                 <img class="hoproduct-backimage" src="{{ asset($product->photo)}}"
                                     alt="product image">
                             </a>
                             <ul class="hoproduct-actionbox">
-                                <li><a href="#"><i class="lnr lnr-cart"></i></a></li>
-                                <li><a href="#" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
+                                <li><a href="/cart"><i class="lnr lnr-cart"></i></a></li>
+                                <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                             </ul>
                             <ul class="hoproduct-flags">
                                 <li class="flag-pack">{{__('frontend.new')}}</li>
@@ -421,9 +437,9 @@
                         </div>
                         <div class="hoproduct-content">
                             @if (Session::get('locale')==='ar')
-                            <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_ar}}</a></h5>
+                            <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_ar}}</a></h5>
                             @else
-                            <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_en}}</a></h5>
+                            <h5 class="hoproduct-title"><a href="/details/{{$product->id}}">{{$product->name_en}}</a></h5>
                             @endif
                             
                             <div class="hoproduct-pricebox">
@@ -438,8 +454,9 @@
                             </div>
                         </div>
                     </article>
+                    @endforeach
                 </div>
-                        @endforeach
+                        
                 </div>
             </div>
         </div>

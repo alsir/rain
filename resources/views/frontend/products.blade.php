@@ -48,7 +48,7 @@
                     <!-- Single Product -->
                     <article class="hoproduct">
                         <div class="hoproduct-image">
-                            <a class="hoproduct-thumb" href="product-details.html">
+                            <a class="hoproduct-thumb" href="/details/{{$product->id}}">
                                 <img class="hoproduct-frontimage" src="{{ asset($product->photo) }}"
                                     alt="product image">
                                 <img class="hoproduct-backimage" src="{{ asset($product->photo) }}"
@@ -63,7 +63,7 @@
                                     <input type="hidden" value="{{ $product->price }}" name="price">
                                     <input type="hidden" value="{{ $product->image }}"  name="image">
                                     <input type="hidden" value="1" name="quantity">
-                                    <button class="px-4 py-1.5 text-white text-sm bg-blue-800 rounded">Add To Cart</button>
+                                    <button class="px-4 py-1.5 text-white text-sm bg-blue-800 rounded" type="submit">{{__('frontend.add_to_cart')}}</button>
                                 </form></i></a></li>
                                 <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                             </ul>
