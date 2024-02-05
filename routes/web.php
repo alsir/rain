@@ -61,7 +61,7 @@ Route::get('/cart', [FrontendController::class , 'cart']);
 Route::get('/products', [FrontendController::class , 'product']);
 Route::get('/aboutus', [FrontendController::class , 'aboutus']);
 Route::get('/contactus', [FrontendController::class , 'contactus']);
-Route::get('/details/{$id}', [FrontendController::class , 'show']);
+Route::get('/details/{id}', [FrontendController::class , 'show']);
 Route::post('/check',[FrontendController::class , 'store']);
 Route::get('/checkout',[FrontendController::class , 'checkout']);
 Route::get('change_language/{lang}' , [LanguageController::class , 'change']);

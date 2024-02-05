@@ -63,7 +63,7 @@ class FrontendController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        $product_discount= $product->discount *100;
+        $product_discount= $product->discount * 100;
         $product_price_after_discount= $product->price - ($product->discount *$product->price);
         $category = Category::find($product->category_id);
 

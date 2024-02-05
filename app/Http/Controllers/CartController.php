@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Cart;
 use Illuminate\Http\Request;
 
@@ -11,26 +12,26 @@ class CartController extends Controller
     {
         $cartItems = \Cart::getContent();
         // dd($cartItems);
-        return view('frontend.cart', compact('cartItems'));
+        return view('frontend.cart' , compact('cartItems'));
     }
 
 
     public function addToCart(Request $request)
     {
-        \Cart::add([
-            'id' => $request->id,
-            'name' => $request->name,
-            'price' => $request->price,
+        $Product = Product::find($request->id); // assuming you have a Product model with id, name, description & price
+
+        $userID = 1;
+        \Cart::session($userID)->add(array(
+            'id' => $Product->id,
+            'name' => $Product->name_en,
+            'price' => $Product->price,
             'quantity' => $request->quantity,
-            'attributes' => array(
-                'image' => $request->image,
-            )
-        ]);
-        session()->flash('success', 'Product is Added to Cart Successfully !');
+        ));
 
-        return redirect()->route('cart.list');
+        toastr()->success('تم حفظ بيانات الطلب بنجاح !!');
+
+        return back();
     }
-
     public function updateCart(Request $request)
     {
         \Cart::update(

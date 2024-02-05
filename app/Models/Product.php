@@ -28,7 +28,7 @@ class Product extends Model
     }
     public function categroy()
     {
-        return $this->belongsTo(categroy::class , 'id','categroy_id');
+        return $this->belongsTo(Category::class , 'id','categroy_id');
     }
     public function orderitem()
     {

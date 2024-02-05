@@ -55,16 +55,16 @@
                                     alt="product image">
                             </a>
                             <ul class="hoproduct-actionbox">
-                                <li><a href="#"><i class="lnr lnr-cart">
-                                    <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                <li><i class="lnr lnr-cart">
+                                    <form action="/cart" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" value="{{ $product->id }}" name="id">
-                                    <input type="hidden" value="{{ $product->name }}" name="name">
+                                    <input type="hidden" value="{{ $product->name_en }}" name="name">
                                     <input type="hidden" value="{{ $product->price }}" name="price">
-                                    <input type="hidden" value="{{ $product->image }}"  name="image">
+                                    <input type="hidden" value="{{ $product->photo }}"  name="photo">
                                     <input type="hidden" value="1" name="quantity">
-                                    <button class="px-4 py-1.5 text-white text-sm bg-blue-800 rounded" type="submit">{{__('frontend.add_to_cart')}}</button>
-                                </form></i></a></li>
+                                    <button class="px-4 py-1.5 text-white text-sm bg-blue-800 rounded">{{__('frontend.add_to_cart')}}</button>
+                                </form></i></li>
                                 <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                             </ul>
                             <ul class="hoproduct-flags">
@@ -89,7 +89,7 @@
                                 {{$product->description_ar}}
                             </p>
                             @else
-                            <h5 class="hoproduct-title"><a href="product-details.html">{{$product->name_en}}</a></h5>
+                            <h5 class="hoproduct-title"><a href="/details/{{$product->id}}" >{{$product->name_en}}</a></h5>
                             <div class="hoproduct-pricebox">
                                 <div class="pricebox">
                                     @if($product->discount !=  0)

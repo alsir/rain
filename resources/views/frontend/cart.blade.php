@@ -17,19 +17,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($cartItems as $cartItem):   
+                    @foreach($cartItems as $cartItem)  
                     <tr>
                         <td>
-                            <a href="product-details-right-sidebar.html" class="product-image">
+                            {{-- <a href="product-details-right-sidebar.html" class="product-image">
                                 <img src="{{ asset($cartItem->photo)}}" alt="product image">
-                            </a>
+                            </a> --}}
                         </td>
                         <td>
                             <a href="/details/{{$cartItem->id}}" class="product-title">{{$cartItem->name}}</a>
                         </td>
                         <td>{{$cartItem->price}}</td>
                         <td>
-                            {{$cartItem->quantity}}
+                            {{$cartItem->qty}}
                         </td>
                         <td>
                             <span class="total-price">{{$cartItem->price * $cartItem->quantity}} KWD</span>
@@ -72,7 +72,7 @@
                                 
                                 <tr class="cart-total">
                                     <th><span>{{__('frontend.total')}}</span></th>
-                                    <td>$722.00</td>
+                                    <td>{{Cart::getTotal()}}</td>
                                 </tr>
                             </tbody>
                         </table>

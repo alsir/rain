@@ -182,7 +182,16 @@
                                 alt="product image">
                         </a>
                         <ul class="hoproduct-actionbox">
-                            <li><a href="/cart"><i class="lnr lnr-cart"></i></a></li>
+                            <li><i class="lnr lnr-cart"></i>
+                                <form action="/cart" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{ $product->id }}" name="id">
+                                    <input type="hidden" value="{{ $product->name_en }}" name="name">
+                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                    <input type="hidden" value="{{ $product->photo }}"  name="photo">
+                                    <input type="hidden" value="1" name="quantity">
+                                    <button class="px-4 py-1.5 text-white text-sm bg-blue-800 rounded">{{__('frontend.add_to_cart')}}</button>
+                                </form></li>
                             <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                         </ul>
                         <ul class="hoproduct-flags">
@@ -262,7 +271,7 @@
                         <article class="hoproduct hoproduct-3">
                             
                             <div class="hoproduct-image">
-                                <a class="hoproduct-thumb" href="/details/{{$product->id}}">
+                                <a class="hoproduct-thumb" href="/detail/{{$product->id}}">
                                     <img class="hoproduct-frontimage" src="{{ asset($product->photo)}}"
                                         alt="product image">
                                     <img class="hoproduct-backimage" src="{{ asset($product->photo)}}"
@@ -271,7 +280,16 @@
                                 <ul class="hoproduct-actionbox">
                                     <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                    <li><a href="/cart" type="submit"><i class="lnr lnr-cart"></i></a></li>
+                                    <li><i class="lnr lnr-cart">
+                                        <form action="/cart" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" value="{{ $product->id }}" name="id">
+                                            <input type="hidden" value="{{ $product->name_en }}" name="name">
+                                            <input type="hidden" value="{{ $product->price }}" name="price">
+                                            {{-- <input type="hidden" value="{{ $product->photo }}"  name="photo"> --}}
+                                            <input type="hidden" value="1" name="quantity">
+                                            <button class="px-4 py-1.5 text-white text-sm bg-blue-800 rounded">{{__('frontend.add_to_cart')}}</button>
+                                        </form></i></a></li>
                                     </form>
                                     <li><a href="/details/{{$product->id}}" class="quickview-trigger"><i class="lnr lnr-eye"></i></a></li>
                                 </ul>
