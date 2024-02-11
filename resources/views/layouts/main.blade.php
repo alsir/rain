@@ -110,11 +110,38 @@
 									<!-- Minicart -->
 									<div class="header-minicart minicart">
 										<div class="minicart-header">
-											
+											@foreach($cartItems as $cartItem) 
+											<div class="minicart-product">
+                                                <div class="minicart-productimage">
+                                                    <a href="product-details.html">
+                                                        <img src="images/product/thumbnail/product-image-2.jpg" alt="product image">
+                                                    </a>
+                                                    <span class="minicart-productquantity">{{$cartItem->qty}}x</span>
+                                                </div>
+                                                <div class="minicart-productcontent">
+                                                    <h6><a href="product-details.html">{{$cartItem->name}}</a></h6>
+                                                    <span class="minicart-productprice">{{$cartItem->price}}</span>
+                                                </div>
+												<form action="{{route('cart.remove')}}" method="POST" enctype="multipart/form-data">
+													@csrf
+													<input type="hidden" value="{{ $cartItem->rowId }}" name="id">
+                                                <button class="minicart-productclose"><i class="ion ion-ios-close-circle"></i></button>
+												</form>
+                                            </div>
+											@endforeach
+                                        </div>
+                                        <ul class="minicart-pricing">
+                                            <li>Total <span>{{ Cart::subtotal()}}</span></li>
+                                        </ul>
+									
 										<div class="minicart-footer">
 											<a href="/cart" class="ho-button ho-button-fullwidth">
-												<span>Cart</span>
+												<span>cart</span>
 											</a>
+
+                                            <a href="/checkout" class="ho-button ho-button-dark ho-button-fullwidth">
+                                                <span>{{__('frontend.proceed_to_checkout')}}</span>
+                                            </a>
 										</div>
 									</div>
 									<!--// Minicart -->

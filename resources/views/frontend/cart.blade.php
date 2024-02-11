@@ -35,11 +35,10 @@
                             <span class="total-price">{{$cartItem->subtotal()}} KWD</span>
                         </td>
                         <td>
-                            <form action="remove" method="POST">
-                            @csrf
-                            @method('POST')
-                            <input type="hidden" value="{{$cartItem->id -1 }}" name="id">
-                            <button class="remove-product" type="submit"><i class="ion ion-ios-close"></i></button>
+                            <form action="{{route('cart.remove')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" value="{{ $cartItem->rowId }}" name="id">
+                            <button class="remove-product"><i class="ion ion-ios-close"></i></button>
                             </form>
                         </td>
                     </tr>

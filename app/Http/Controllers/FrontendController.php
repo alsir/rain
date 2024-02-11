@@ -21,9 +21,11 @@ class FrontendController extends Controller
         $sildering= Slider::all();
         $ading= Ad::all();
         $products = Product::all();
+        $cartItems = Cart::content();
         return view('frontend.index')->with('new_arrival_products' , $new_arrival_products)
         ->with('best_products' , $best_products)
         ->with('sildering' , $sildering)
+        ->with('cartItems',$cartItems)
         ->with('ading' , $ading)
         ->with('categories' , $categories)
         ->with('products' , $products);
@@ -64,30 +66,36 @@ class FrontendController extends Controller
     }
     public function show($id)
     {
+        
         $product = Product::find($id);
         $product_discount= $product->discount * 100;
         $product_price_after_discount= $product->price - ($product->discount *$product->price);
         $category = Category::find($product->category_id);
-
+        $cartItems = Cart::content();
         return view('frontend.details')->with('product', $product)
         ->with('product_discount', $product_discount)
+        ->with('cartItems',$cartItems)
         ->with('product_price_after_discount', $product_price_after_discount)
         ->with('category', $category);
     }
     public function product()
     {
         $products = Product::all();
+        $cartItems = Cart::content();
         $products_count = $products->count();
         return view('frontend.products')->with('products' , $products)
-        ->with('products_count' , $products_count);
+        ->with('products_count' , $products_count)
+        ->with('cartItems',$cartItems);
     }
     public function aboutus()
     {
-        return view('frontend.aboutus');
+        $cartItems = Cart::content();
+        return view('frontend.aboutus')->with('cartItems',$cartItems);
     }
     public function contactus()
     {
-        return view('frontend.contactus');
+        $cartItems = Cart::content();
+        return view('frontend.contactus')->with('cartItems',$cartItems);
     }
 
 }

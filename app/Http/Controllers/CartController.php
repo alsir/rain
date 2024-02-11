@@ -23,6 +23,7 @@ class CartController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'qty' => $request->quantity,
+            'photo' =>$request->photo
         ));
 
         return back();

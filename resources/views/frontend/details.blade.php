@@ -50,10 +50,22 @@
                            <p>{{$product->description_en}}</p>
                         @endif
                         <div class="pdetails-quantity">
-                            <a href="cart" class="ho-button">
-                                <i class="lnr lnr-cart"></i>
-                                <span>{{__('frontend.add_to_cart')}}</span>
-                            </a>
+                            <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <form action="{{route('cart.store')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{ $product->id }}" name="id">
+                                    <input type="hidden" value="{{ $product->name_en }}" name="name">
+                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                    {{-- <input type="hidden" value="{{ $product->photo }}"  name="photo"> --}}
+                                    <div class="quantity-select">
+                                        <input type="number" value="1" name="quantity">
+                                        <div class="inc qtybutton">+<i class="ion ion-ios-arrow-up"></i></div>
+                                        <div class="dec qtybutton">-<i class="ion ion-ios-arrow-down"></i></div>
+                                    </div>
+                                    <button class="ho-button"><i class="lnr lnr-cart"></i><span>{{__('frontend.add_to_cart')}}</span></button>
+                                </form>
+                            </form>
                         </div>
                         <div class="pdetails-categories">
                             <span>{{__('frontend.categories')}} :</span>
@@ -64,12 +76,6 @@
                                 @else
                                     {{$category->name_en}}
                                 @endif</a></li>
-                            </ul>
-                        </div>
-                        <div class="pdetails-socialshare">
-                            <span>{{__('frontend.share')}} :</span>
-                            <ul>
-                                <li><a href="#"><i class="ion ion-logo-facebook"></i></a></li>
                             </ul>
                         </div>
                     </div>
