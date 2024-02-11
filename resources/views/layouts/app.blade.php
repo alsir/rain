@@ -158,7 +158,7 @@
                     data-i18n="Starter kit"> وحدات الطلب</span></a>
             
               </li>
-                <li class="nav-item {{ request()->is('admin/order') ? 'active' : '' }}"><a href="/admin/order/"><i class="feather icon-shopping-cart"></i><span class="menu-title"
+                <li class="nav-item {{ request()->is('admin/order') ? 'active' : '' }}"><a href="admin/order/"><i class="feather icon-shopping-cart"></i><span class="menu-title"
                             data-i18n="Starter kit"> الطلبات</span></a>
                     
                 </li>

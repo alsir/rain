@@ -29,7 +29,7 @@ class StoreOrderRequest extends FormRequest
             'costumer_name' => 'required|max:255|string',
             'address' => 'required|max:255|string',
             'costumer_number' => 'required|numeric|digits_between:9,12',
-            'coupon_id' => 'required|numeric',
+            'coupon_id' => 'numeric',
 
             
         ];

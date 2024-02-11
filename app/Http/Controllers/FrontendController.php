@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ad;
-use Cart;
 use App\Models\Order;
+use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Orderitem;
-use App\Models\Slider;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class FrontendController extends Controller
 {
@@ -30,7 +30,7 @@ class FrontendController extends Controller
     }
     public function checkout()
     {
-        $cartItems = \Cart::getContent();
+        $cartItems = Cart::Content();
 
         return view('frontend.checkout')->with('cartItems', $cartItems);
     }
@@ -38,27 +38,29 @@ class FrontendController extends Controller
     {
         return view('frontend.cart');
     }
-    public function check( request $request )
+    public function store ( request $request )
     {
-        $cartItems = Cart::getContent();
+        $cartItems = Cart::Content();
         $order=new Order();
         $order->total = $request->total;
         $order->note = $request->note;
         $order->costumer_name = $request->costumer_name;
         $order->costumer_number = $request->costumer_number;
         $order->address = $request->address;
-        $order->coupon_id=$request->coupon_id;
         $order ->save();
         $order_id = $order->id;
         foreach( $cartItems as $cartItem){
             $product_id = $cartItem->id;
-            $quantity = $cartItem->quantity;
-            $cartItem=new Orderitem();
-            $cartItem->product_id = $product_id ;
-            $cartItem->order_id = $order_id;
-            $cartItem->quantity = $quantity;
-            $cartItem ->save();
+            $quantity = $cartItem->qty;
+            $Orderitem=new Orderitem();
+            $Orderitem->product_id = $product_id ;
+            $Orderitem->order_id = $order_id;
+            $Orderitem->quantity = $quantity;
+            $Orderitem ->save();
         }
+        Cart::destroy();
+        $cartItems = Cart::Content();
+        return view('frontend.cart')->with('cartItems', $cartItems);;
     }
     public function show($id)
     {

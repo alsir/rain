@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('order_status')->default(0);
             $table->longText('note');
             $table->double('total', 8, 2);
-            $table->string('coupon_id', 32)->references('id')->on('coupons');
+            $table->string('coupon_id', 32)->references('id')->on('coupons')->default(0);
             $table->timestamps();
         });
     }

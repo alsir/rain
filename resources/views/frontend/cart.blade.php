@@ -32,12 +32,13 @@
                             {{$cartItem->qty}}
                         </td>
                         <td>
-                            <span class="total-price">{{$cartItem->price * $cartItem->quantity}} KWD</span>
+                            <span class="total-price">{{$cartItem->subtotal()}} KWD</span>
                         </td>
                         <td>
-                            <form action="remove/{{$cartItem->id}}" method="POST">
+                            <form action="remove" method="POST">
                             @csrf
-                            @method('DELETE')
+                            @method('POST')
+                            <input type="hidden" value="{{$cartItem->id -1 }}" name="id">
                             <button class="remove-product" type="submit"><i class="ion ion-ios-close"></i></button>
                             </form>
                         </td>
@@ -72,7 +73,7 @@
                                 
                                 <tr class="cart-total">
                                     <th><span>{{__('frontend.total')}}</span></th>
-                                    <td>{{Cart::getTotal()}}</td>
+                                    <td>{{Cart::total()}}</td>
                                 </tr>
                             </tbody>
                         </table>

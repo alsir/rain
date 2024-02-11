@@ -7,12 +7,12 @@
     "require": {
         "php": "^8.0.2",
         "a6digital/laravel-default-profile-image": "^2.0",
-        "darryldecode/cart": "^4.2",
         "davmixcool/laravel-meta-manager": "^1.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "mindscms/laravelshoppingcart": "^2.1",
         "yoeunes/toastr": "^2.0"
     },
     "require-dev": {

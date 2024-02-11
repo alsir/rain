@@ -181,7 +181,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Darryldecode\Cart\CartServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Davmixcool\MetaManager\MetaServiceProvider::class,
         'A6digital\Image\DefaultProfileImageServiceProvider',
         /*
@@ -211,7 +211,7 @@ return [
      */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

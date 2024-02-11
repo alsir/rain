@@ -17,21 +17,21 @@
 	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('/app-assets/images/logo/Rain-tech.ico') }}">
     <!-- Google font (font-family: 'Roboto', sans-serif;) -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/app-assets/vendors/css/vendors-rtl.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/app-assets/vendors/css/ui/prism.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('./app-assets/vendors/css/vendors-rtl.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('./app-assets/vendors/css/ui/prism.min.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="{{ asset('frontend/rtl/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('frontend/rtl/css/plugins.css') }}">
+    <link rel="stylesheet" href="{{ asset('/frontend/rtl/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/frontend/rtl/css/plugins.css') }}">
 
 	<!-- Style Css -->
-	<link rel="stylesheet" href="{{ asset('frontend/rtl/style.css')}}">
+	<link rel="stylesheet" href="{{ asset('/frontend/rtl/style.css')}}">
 
 	<!-- Custom Styles -->
-	<link rel="stylesheet" href="{{ asset('frontend/rtl/css/custom.css')}}">
+	<link rel="stylesheet" href="{{ asset('/frontend/rtl/css/custom.css')}}">
 </head>
 
 <body>
@@ -103,7 +103,7 @@
 						<div class="col-lg-3 col-md-6 col-sm-6 order-2 order-lg-3">
 							<div class="header-icons">
 								<div class="header-cart">
-									<a class="header-carticon" href="/cart"><i class="lnr lnr-cart"></i><span class="count">{{ Cart::getTotalQuantity()}}</span></a>
+									<a class="header-carticon" href="/cart"><i class="lnr lnr-cart"></i><span class="count">{{ Cart::count()}}</span></a>
 
 									<!-- Minicart -->
 									<div class="header-minicart minicart">

@@ -30,7 +30,7 @@ class UpdateOrderRequest extends FormRequest
             'address' => 'required|max:255|string',
             'costumer_number' => 'required|numeric|digits_between:9,12',
             'order_status'=>'required|numeric',
-            'coupon_id' => 'required|numeric',
+            'coupon_id' => 'numeric',
 
         ];
     }

@@ -16,7 +16,7 @@
 <form action="/check" class="billing-info" method="post">
     @csrf
     <div class="row">
-        <input type="hidden" value="{{ Cart::getTotal() }}" name="total">
+        <input type="hidden" value="{{ Cart::total() }}" name="total">
         <!-- Billing Details -->
         <div class="col-lg-6">
 
@@ -30,7 +30,7 @@
 
                     <div class="single-input single-input-half">
                         <label for="customer-phone">{{__("frontend.phone")}} *</label>
-                        <input type="text" name="costumer_number" id="customer-phone">
+                        <input type="number" name="costumer_number" id="customer-phone">
                     
                     
                     </div>
@@ -67,15 +67,15 @@
                         <tbody>
                             @foreach ($cartItems as $cartItem)
                         <tr>
-                        <td class="text-left"> {{$cartItem->name}} <span>× {{$cartItem->quantity}}</span></td>
-                        <td class="text-right">{{$cartItem->quantity * $cartItem->price}} KWD </td>  
+                        <td class="text-left"> {{$cartItem->name}} <span>× {{$cartItem->qty}}</span></td>
+                        <td class="text-right">{{$cartItem->subtotal()}} KWD </td>  
                          </tr>
                           @endforeach
                         </tbody>
                         <tfoot>
                             <tr class="total-price">
                                 <th class="text-left">{{__("frontend.cart_totals")}}</th>
-                                <td class="text-right">{{ Cart::getTotal() }}</td>
+                                <td class="text-right">{{ Cart::total() }}</td>
                             </tr>
                         </tfoot>
                     </table>

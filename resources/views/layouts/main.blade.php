@@ -26,14 +26,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
 
 	<!-- Plugins -->
-	<link rel="stylesheet" href="{{ asset('frontend/ltr/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('frontend/ltr/css/plugins.css') }}">
+	<link rel="stylesheet" href="{{ asset('/frontend/ltr/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('/frontend/ltr/css/plugins.css') }}">
 
 	<!-- Style Css -->
-	<link rel="stylesheet" href="{{ asset('frontend/ltr/css/style.css')}}">
+	<link rel="stylesheet" href="{{ asset('/frontend/ltr/css/style.css')}}">
 
 	<!-- Custom Styles -->
-	<link rel="stylesheet" href="{{ asset('frontend/ltr/css/custom.css')}}">
+	<link rel="stylesheet" href="{{ asset('/frontend/ltr/css/custom.css')}}">
 </head>
 
 <body>
@@ -105,7 +105,7 @@
 						<div class="col-lg-3 col-md-6 col-sm-6 order-2 order-lg-3">
 							<div class="header-icons">
 								<div class="header-cart">
-									<a class="header-carticon" href="/cart"><i class="lnr lnr-cart"></i><span class="count">{{ Cart::getTotalQuantity()}}</span></a>
+									<a class="header-carticon" href="/cart"><i class="lnr lnr-cart"></i><span class="count">{{ Cart::count()}}</span></a>
 
 									<!-- Minicart -->
 									<div class="header-minicart minicart">

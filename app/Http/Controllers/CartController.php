@@ -3,38 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Cart;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
     public function cartList()
     {
-        $cartItems = \Cart::getContent();
+        $cartItems = Cart::content();
         // dd($cartItems);
         return view('frontend.cart' , compact('cartItems'));
     }
 
-
     public function addToCart(Request $request)
     {
-        $Product = Product::find($request->id); // assuming you have a Product model with id, name, description & price
-
-        $userID = 1;
-        \Cart::session($userID)->add(array(
-            'id' => $Product->id,
-            'name' => $Product->name_en,
-            'price' => $Product->price,
-            'quantity' => $request->quantity,
+        
+        Cart::add(array(
+            'id' => $request->id,
+            'name' => $request->name,
+            'price' => $request->price,
+            'qty' => $request->quantity,
         ));
-
-        toastr()->success('تم حفظ بيانات الطلب بنجاح !!');
 
         return back();
     }
     public function updateCart(Request $request)
     {
-        \Cart::update(
+        Cart::update(
             $request->id,
             [
                 'quantity' => [
@@ -51,7 +46,7 @@ class CartController extends Controller
 
     public function removeCart(Request $request)
     {
-        \Cart::remove($request->id);
+        Cart::remove($request->id);
         session()->flash('success', 'Item Cart Remove Successfully !');
 
         return redirect()->route('cart.list');
