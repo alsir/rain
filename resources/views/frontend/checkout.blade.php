@@ -25,24 +25,24 @@
                 <div class="ho-form-inner">
                     <div class="single-input single-input-half">
                         <label for="customer-firstname"> {{__("frontend.name")}} *</label>
-                        <input type="text" name="costumer_name" id="customer-firstname">
+                        <input type="text" name="costumer_name" id="customer-firstname" required>
                     </div>
 
                     <div class="single-input single-input-half">
                         <label for="customer-phone">{{__("frontend.phone")}} *</label>
-                        <input type="number" name="costumer_number" id="customer-phone">
+                        <input type="number" name="costumer_number" id="customer-phone" required>
                     
                     
                     </div>
                     <div class="single-input">
                         <label for="customer-address">{{__("frontend.address")}}*</label>
                         <input type="text" name="address" id="customer-address"
-                            placeholder="address">
+                            placeholder="address" required>
                     </div>
                     <div class="single-input">
                         <label for="customer-address">{{__("frontend.note")}}*</label>
                         <input type="text" name="note" id="customer-address"
-                            placeholder="note">
+                            placeholder="note" required>
                     </div>
                 </div>
             </div>

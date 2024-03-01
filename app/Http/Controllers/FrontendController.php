@@ -15,8 +15,8 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $new_arrival_products  = Product::orderBy('id','DESC')->limit(7);
-        $best_products  = Product::orderBy('discount','DESC')->limit(7);
+        $new_arrival_products  = Product::orderBy('id','DESC')->limit(7)->get();
+        $best_products  = Product::orderBy('discount','DESC')->limit(7)->get();
         $categories= Category::all();
         $sildering= Slider::all();
         $ading= Ad::all();

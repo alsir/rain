@@ -41,10 +41,8 @@
         <div class="shop-page-products mt-30">
             <div class="row no-gutters">
                 
-                                        
-               
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                     @foreach ($products as $product)
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                     <!-- Single Product -->
                     <article class="hoproduct">
                         <div class="hoproduct-image">
@@ -107,9 +105,9 @@
                         
                         </div>
                     </article>
+                    </div>
                     @endforeach
                     <!--// Single Product -->
-                </div>
             </div>
         </div>
 

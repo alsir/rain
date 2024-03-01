@@ -169,8 +169,9 @@
             <h3>{{__('frontend.deal_of_the_day')}}</h3>
         </div>
         <div class="product-slider deal-of-the-day-slider slider-navigation-2 slider-dots">
-            <div class="product-slider-col">
+            
                 @foreach ($best_products as $product)
+                <div class="product-slider-col">
                 <!-- Single Product -->
                 <article class="hoproduct">
                     
@@ -218,9 +219,10 @@
                         </div>
                     </div>
                 </article>
+            </div>
                     @endforeach
                 <!--// Single Product -->
-            </div>
+            
             <!--// Single Product -->
 
         </div>
@@ -264,10 +266,11 @@
         <div class="tab-content" id="bstab1-ontent">
             <div class="tab-pane fade show active" id="bstab1-area1" role="tabpanel" aria-labelledby="bstab1-area1-tab">
                 <div class="product-slider trending-products-slider-2 slider-navigation-2">
-                    <div class="product-slider-col">
+                    
                         
                         <!-- Single Product -->
                         @foreach ($products as $product)
+                        <div class="product-slider-col">
                         <article class="hoproduct hoproduct-3">
                             
                             <div class="hoproduct-image">
@@ -318,10 +321,12 @@
                             </div>
                             
                         </article>
+                    </div>
+
                         @endforeach
                             
                         <!--// Single Product -->
-                    </div>
+                    
 
                 </div>
             </div>
@@ -350,10 +355,10 @@
             <div class="tab-pane fade show active" id="bstab2-area1" role="tabpanel" aria-labelledby="bstab2-area1-tab">
                 <div class="product-slider our-products-slider-3 slider-navigation-2">
 
-                    <div class="product-slider-col">
                         
                         <!-- Single Product -->
                         @foreach ($products as $product)
+                        <div class="product-slider-col">
                         <article class="hoproduct flex-row">
                             
                             <div class="hoproduct-image">
@@ -403,10 +408,11 @@
                                 </div>
                             </div>
                         </article>
+                        </div>
                         @endforeach
                         
 
-                </div>
+                
             </div>
         </div>
     </div>
@@ -443,10 +449,10 @@
             <div class="tab-pane fade show active" id="bstab3-area1" role="tabpanel" aria-labelledby="bstab3-area1-tab">
             <div class="product-slider new-best-featured-slider slider-navigation-2">
                 
-                <div class="product-slider-col">
                     
                     <!-- Single Product -->
                     @foreach ($new_arrival_products as $product)
+                    <div class="product-slider-col">
                     <article class="hoproduct">
                         
                         <div class="hoproduct-image">
@@ -484,9 +490,8 @@
                             </div>
                         </div>
                     </article>
-                    @endforeach
-                </div>
-                        
+                    </div>
+                    @endforeach        
                 </div>
             </div>
         </div>
